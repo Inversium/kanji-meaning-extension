@@ -10,12 +10,12 @@ function loadData(kanjiData) {
 		var kanjiJishoElem = document.querySelector("#kanji-info-jisho");
 		var kanjiJishoCharacterElem = document.querySelector("#kanji-info-jisho-character");
 	
-		kanjiElem.innerHTML = kanjiData.kanji;
-		kanjiMeaningElem.innerHTML = kanjiData.meanings.join(", ");
-		kanjiOnElem.innerHTML = kanjiData.on_readings.join(", ");
-		kanjiKunElem.innerHTML = kanjiData.kun_readings.join(", ");
+		kanjiElem.appendChild(document.createTextNode(kanjiData.kanji));
+		kanjiMeaningElem.appendChild(document.createTextNode(kanjiData.meanings.join(", ")));
+		kanjiOnElem.appendChild(document.createTextNode(kanjiData.on_readings.join(", ")));
+		kanjiKunElem.appendChild(document.createTextNode(kanjiData.kun_readings.join(", ")));
 
-		kanjiJishoCharacterElem.innerHTML = kanjiData.kanji;
+		kanjiJishoCharacterElem.appendChild(document.createTextNode(kanjiData.kanji));
 		kanjiJishoElem.setAttribute("href", "https://jisho.org/search/" + kanjiData.kanji + "%23kanji");
 	}
 	else {
@@ -24,7 +24,7 @@ function loadData(kanjiData) {
 
 		elem = document.querySelector("#kanji-info-popup");
 		var notFoundHtml = document.createElement("p");
-		notFoundHtml.innerHTML = "No such Kanji :("
+		notFoundHtml.appendChild(document.createTextNode("No such Kanji :("));
 		elem.appendChild(notFoundHtml);
 	}
 
@@ -68,7 +68,7 @@ httpGetAsync(url + selectedKanji, console.log);
 
 httpGetAsync(url + selectedKanji, loadData);
 
-container.innerHTML = kanjiInfoHtml;
+container.appendChild(document.createTextNode(kanjiInfoHtml));
 
 document.body.appendChild(container);
 
