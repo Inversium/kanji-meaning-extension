@@ -1,0 +1,35 @@
+
+.kanji-info-line {
+	line-height: 1.35em;
+}
+
+.kanji-info-property {
+	font-weight: bold;
+}
+
+#kanji-info-header {
+	font-size: 1.65em;
+	margin: 4px 8px 8px 0px;
+	color: #FFF;
+	font-weight: bold;
+}
+
+#kanji-info-popup {
+	padding: 12px 16px;
+	height: auto;
+	width: auto;
+	background-color: #454545;
+	position: absolute;
+	z-index: 999;
+	color: #FFF;
+	box-shadow: 4px 4px 6px #000A;
+}
+
+a#kanji-info-jisho:link, :visited {
+	color: hotpink;
+}
+
+#kanji-info-jisho-character {
+	font-weight: bold;
+	font-size: 1.2em;
+}
