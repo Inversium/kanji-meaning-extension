@@ -30,10 +30,10 @@ function loadData(kanjiData) {
 
 }
 
-function httpGetAsync(url, callback) {
+function httpGetAsync(url, ...callbacks) {
 	fetch(url)
 		.then(response => response.json())
-		.then(json => callback(json));
+		.then(json => callbacks.forEach(cb => cb(json)));
 }
 
 
@@ -42,6 +42,7 @@ function httpGetAsync(url, callback) {
 //Create element for Kanji information
 var container = document.createElement("div");
 container.setAttribute("id", "kanji-info-popup");
+document.body.appendChild(container);
 
 //Convert plain html text to node
 var kanjiInfoHtmlElem = new DOMParser().parseFromString(kanjiInfoHtml, "text/html");
@@ -68,13 +69,11 @@ container.style.left = X + "px";
 //URL for requests
 var url = "https://kanjiapi.dev/v1/kanji/";
 
-httpGetAsync(url + selectedKanji, console.log);
-
-httpGetAsync(url + selectedKanji, loadData);
+httpGetAsync(url + selectedKanji, loadData, console.log);
 
 
 
-document.body.appendChild(container);
+
 
 
 //Remove element when user clicks on anything except our container
