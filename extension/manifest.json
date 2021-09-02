@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Kanji Meaning",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "description": "Allows you to quickly see the meaning and reading of kanji.",
   "icons": {
