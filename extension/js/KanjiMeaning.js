@@ -42,6 +42,7 @@ function httpGetAsync(url, callback) {
 //Create element for Kanji information
 var container = document.createElement("div");
 container.setAttribute("id", "kanji-info-popup");
+container.insertAdjacentHTML("beforeend", kanjiInfoHtml);
 
 
 //Get range of selection, place marker at the end of selection and get coords of that marker
@@ -68,7 +69,7 @@ httpGetAsync(url + selectedKanji, console.log);
 
 httpGetAsync(url + selectedKanji, loadData);
 
-container.appendChild(document.createTextNode(kanjiInfoHtml));
+
 
 document.body.appendChild(container);
 
@@ -82,3 +83,4 @@ document.body.onclick = function(event) {
 }
 
 
+undefined;
