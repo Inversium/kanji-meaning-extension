@@ -25,7 +25,7 @@
 	box-shadow: 4px 4px 6px #000A;
 }
 
-a#kanji-info-jisho:link, :visited {
+a#kanji-info-jisho:link, a#kanji-info-jisho:visited {
 	color: hotpink;
 }
 
